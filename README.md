@@ -94,6 +94,26 @@ Pada tahap ini saya menggunakan berbagai Teknologi seperti React Native, Expo un
 
 - Pada tahap ini kita mengeksplorasi alir interaksi pengguna yang paling praktis dan efektif
 - Pada design yang saya gunakan adalah **AutoDraw untuk UX** sedangkan untuk **UI menggunakan Figma**.
-- Desain diatas termasuk ke dalam low fidelity design dimana kualitas desainnya paling sederhana tapi cepat untuk dibuat untuk **UX** 
+- Desain diatas termasuk ke dalam low fidelity design dimana kualitas desainnya paling sederhana tapi cepat untuk dibuat untuk **UX**
+
+## 7. Demonstrasi Video
+
+https://youtu.be/MEN2hpYgGLE
+
+## 8. Bagaimana mesin komputasi dan sistem operasi berperan dalam produk teknologi informasimu ?
+
+https://youtu.be/MEN2hpYgGLE
+
+## 9. Bagaimana algoritma, struktur data, dan bahasa pemrograman berperan dalam produk teknologi informasimu ?
+
+https://youtu.be/MEN2hpYgGLE
+
+## 10. Bagaimana metode pengembangan perangkat lunak / Software Development Life Cycle berperan dalam produk teknologi informasimu ?
+
+https://youtu.be/MEN2hpYgGLE
+
+## 11. Bagaimana database / sistem basis data berperan dalam produk teknologi informasimu ?
+
+https://youtu.be/MEN2hpYgGLE
 
 
