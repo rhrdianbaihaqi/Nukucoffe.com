@@ -58,18 +58,49 @@ Pengguna| Membayarkan menu| Pengguna mampu membayar menu yang telah dipesan | �
 
 ## 3. Struktur Data
 ```mermaid
-erDiagram
-    PENGGUNA ||--o{BOOK : mencari
-    PENGGUNA {
-        int Id_pengguna
+
+    classDiagram
+    Order <|-- UserPembeli
+    Menu <|-- UserPembeli
+    Menu <|-- UserAdmin
+    Menu --|> UserAdmin
+    Menu --|> UserPembeli
+    Menu <|-- Keranjang
+    UserPembeli <|-- Keranjang
+     User <|-- UserPembeli
+    User <|-- UserAdmin
+    User <|-- Order
+    User : int id
+    User : String pengguna
+    User : String pasword
+    User : String profile
+    class UserPembeli{
+      String username
+      String pasword
+      int id UserPembeli
     }
-    BOOK {
-        int Id_jumlah_pesanan
-        String_menu kopi
-        String_mencari menu kopi
-        int Id_harga
-        String_profile
-         }
+    class UserAdmin{
+      int id UserAdmin
+      String username
+    }
+    class Order{
+      int totalMenu
+      int totalPembayaran
+      int JumlahPesanan
+      String NamaMenu
+      String NamaPesanan
+    }
+    class Menu{
+      int JumlahMenu
+      String NamaMenu
+    }
+    class Keranjang{
+      int JumlahMenuPesanan
+      String NamaMenuPesanan
+      String NamaPemesan
+      int totalPembayaran
+    }
+
 
 ```
 
@@ -102,18 +133,81 @@ https://youtu.be/MEN2hpYgGLE
 
 ## 8. Bagaimana mesin komputasi dan sistem operasi berperan dalam produk teknologi informasimu ?
 
-https://youtu.be/MEN2hpYgGLE
+Dalam konteks aplikasi kafe "Nuku Coffee", mesin komputasi dan sistem operasi memainkan peran krusial dalam menjalankan operasional sehari-hari serta meningkatkan efisiensi dan pengalaman pelanggan. Berikut adalah beberapa poin yang menjelaskan peran keduanya:
+1.	Pengelolaan Pesanan:
+•	Mesin Komputasi: Mesin komputasi membantu dalam mengelola pesanan pelanggan, mulai dari pemesanan hingga pembayaran. Sistem komputer dapat digunakan untuk mengotomatisasi proses pemesanan, memastikan ketepatan pesanan, dan mengurangi kemungkinan kesalahan manusia.
+•	Sistem Operasi: Sistem operasi memastikan bahwa aplikasi kafe dapat berjalan lancar di dalam mesin komputasi. Ini melibatkan manajemen sumber daya seperti CPU, RAM, dan penyimpanan untuk memastikan performa optimal.
+2.	Pengelolaan Persediaan:
+•	Mesin Komputasi: Komputer dapat digunakan untuk mengelola inventaris bahan baku seperti kopi, susu, gula, dan lainnya. Hal ini membantu kafe untuk menghindari kekurangan persediaan atau pemborosan.
+•	Sistem Operasi: Sistem operasi mendukung aplikasi manajemen persediaan dengan mengelola proses penyimpanan, pencarian data, dan pengelolaan file.
+3.	Keuangan dan Pembayaran:
+•	Mesin Komputasi: Mesin komputasi membantu dalam perhitungan keuangan harian, mengelola transaksi, dan menyimpan catatan keuangan kafe.
+•	Sistem Operasi: Sistem operasi menyediakan platform untuk aplikasi keuangan, memastikan keamanan dan integritas data keuangan kafe.
+4.	Pengelolaan Pelanggan:
+•	Mesin Komputasi: Data pelanggan seperti preferensi rasa dan kebiasaan pembelian dapat disimpan dan dianalisis untuk meningkatkan pengalaman pelanggan.
+•	Sistem Operasi: Sistem operasi membantu dalam mengelola basis data pelanggan dan memastikan keamanan informasi pelanggan.
+5.	Pengelolaan Kinerja Karyawan:
+•	Mesin Komputasi: Komputer dapat digunakan untuk melacak jam kerja karyawan, memproses gaji, dan mengelola jadwal kerja.
+•	Sistem Operasi: Sistem operasi menyediakan platform untuk aplikasi manajemen sumber daya manusia yang membantu dalam pengelolaan kinerja karyawan.
+Dengan memanfaatkan mesin komputasi dan sistem operasi dengan baik, "Nuku Coffee" dapat meningkatkan efisiensi operasional, meningkatkan layanan pelanggan, dan secara keseluruhan, mengoptimalkan pengelolaan kafe mereka.
 
 ## 9. Bagaimana algoritma, struktur data, dan bahasa pemrograman berperan dalam produk teknologi informasimu ?
 
-https://youtu.be/MEN2hpYgGLE
+Dalam aplikasi kafe "Nuku Coffee", algoritma, struktur data, dan bahasa pemrograman memiliki peran penting dalam memastikan kinerja aplikasi yang efisien, responsif, dan dapat diandalkan. Berikut adalah cara ketiga aspek ini berperan dalam konteks aplikasi tersebut:
+1.	Algoritma:
+•	Pengelolaan Pesanan: Algoritma dapat digunakan untuk mengoptimalkan proses pemesanan, pengolahan pesanan, dan penyusunan daftar tunggu. Misalnya, algoritma pencarian dan penyusunan dapat mempercepat waktu pemesanan dan pengantaran pesanan.
+•	Penjadwalan Karyawan: Algoritma penjadwalan dapat membantu dalam menetapkan jadwal kerja yang efisien untuk karyawan, memperhitungkan kebutuhan kafe, jumlah pelanggan, dan preferensi karyawan.
+2.	Struktur Data:
+•	Manajemen Persediaan: Struktur data seperti database dapat digunakan untuk menyimpan informasi persediaan seperti jumlah kopi, susu, dan bahan lainnya. Ini membantu dalam melacak stok, mengelola pembelian, dan mencegah kekurangan persediaan.
+•	Pengelolaan Pelanggan: Struktur data yang efisien seperti basis data pelanggan dapat digunakan untuk menyimpan dan mengakses informasi pelanggan, termasuk riwayat pembelian, preferensi rasa, dan ulasan.
+3.	Bahasa Pemrograman:
+•	Antarmuka Pengguna (UI): Bahasa pemrograman digunakan untuk mengembangkan antarmuka pengguna yang ramah pengguna dan menarik. Ini termasuk pembuatan menu, proses pemesanan online, dan tata letak yang intuitif.
+•	Keamanan Aplikasi: Bahasa pemrograman memainkan peran dalam mengimplementasikan langkah-langkah keamanan seperti enkripsi data pelanggan, perlindungan terhadap serangan siber, dan manajemen otentikasi pengguna.
+•	Integrasi Sistem: Bahasa pemrograman membantu dalam menghubungkan aplikasi dengan perangkat keras kafe seperti mesin kopi, sistem pembayaran, dan perangkat lainnya.
+Dengan menggunakan algoritma yang cerdas, struktur data yang efisien, dan bahasa pemrograman yang sesuai, aplikasi "Nuku Coffee" dapat memberikan pengalaman pengguna yang baik, mengelola operasional dengan lebih baik, dan mengoptimalkan berbagai aspek bisnis kafe, mulai dari pengelolaan pesanan hingga pengelolaan persediaan dan keuangan.
+
 
 ## 10. Bagaimana metode pengembangan perangkat lunak / Software Development Life Cycle berperan dalam produk teknologi informasimu ?
 
-https://youtu.be/MEN2hpYgGLE
+Metode pengembangan perangkat lunak atau Software Development Life Cycle (SDLC) memainkan peran penting dalam memastikan bahwa aplikasi kafe "Nuku Coffee" dikembangkan, diimplementasikan, dan dipelihara dengan cara yang terstruktur dan efisien. Berikut adalah cara SDLC berperan dalam konteks aplikasi tersebut:
+1.	Perencanaan (Planning):
+•	Identifikasi Kebutuhan: Tahap perencanaan SDLC membantu dalam mengidentifikasi kebutuhan dan tujuan kafe "Nuku Coffee". Apa yang diinginkan oleh kafe dari aplikasi tersebut, termasuk fitur-fitur utama, fungsionalitas, dan tujuan bisnisnya.
+•	Penetapan Anggaran dan Sumber Daya: Perencanaan SDLC membantu menetapkan anggaran, alokasi sumber daya, dan jadwal waktu yang realistis untuk pengembangan aplikasi.
+2.	Analisis (Analysis):
+•	Studi Kelayakan (Feasibility Study): SDLC membantu dalam melakukan studi kelayakan untuk menilai apakah pengembangan aplikasi ini memungkinkan dan layak secara bisnis.
+•	Analisis Kebutuhan: Analisis kebutuhan membantu dalam merinci kebutuhan fungsional dan non-fungsional aplikasi, termasuk kebutuhan pelanggan, keamanan, dan kinerja.
+3.	Desain (Design):
+•	Desain Sistem: SDLC membantu dalam merancang struktur dan arsitektur sistem, termasuk desain basis data, antarmuka pengguna, dan logika bisnis.
+•	Pemilihan Teknologi: Pada tahap ini, SDLC membantu dalam memilih teknologi yang sesuai dengan kebutuhan aplikasi, termasuk bahasa pemrograman, basis data, dan platform pengembangan.
+4.	Pengembangan (Development):
+•	Implementasi Kode: SDLC memfasilitasi proses pengembangan perangkat lunak dengan memberikan panduan dan kerangka kerja untuk menulis, menguji, dan mengintegrasikan kode.
+•	Pengujian Unit dan Integrasi: SDLC membantu dalam melaksanakan pengujian unit dan integrasi untuk memastikan bahwa setiap komponen bekerja dengan baik dan berinteraksi dengan komponen lainnya.
+5.	Uji (Testing):
+•	Pengujian Fungsional dan Kinerja: SDLC membantu dalam merancang dan melaksanakan pengujian fungsional untuk memastikan bahwa aplikasi memenuhi kebutuhan pengguna. Selain itu, pengujian kinerja membantu memastikan responsivitas dan kehandalan aplikasi.
+•	Penyusunan Laporan Uji: SDLC memfasilitasi pembuatan laporan uji yang mendokumentasikan hasil pengujian dan menyediakan informasi penting untuk perbaikan dan pengembangan lanjutan.
+6.	Implementasi (Implementation):
+•	Peluncuran Aplikasi: SDLC membantu dalam merencanakan dan melaksanakan peluncuran aplikasi dengan merinci langkah-langkah implementasi, migrasi data, dan pelatihan pengguna.
+7.	Pemeliharaan dan Dukungan (Maintenance and Support):
+•	Pemeliharaan Rutin dan Pembaruan: SDLC membantu dalam merencanakan kegiatan pemeliharaan rutin dan pembaruan aplikasi untuk memastikan keberlanjutan dan keamanan sistem.
+•	Dukungan Pelanggan: SDLC membantu dalam menyusun strategi dukungan pelanggan, termasuk penanganan masalah, pemecahan bug, dan peningkatan berkelanjutan.
+Dengan mengikuti SDLC, "Nuku Coffee" dapat memastikan bahwa pengembangan aplikasi dilakukan dengan cara yang terstruktur, dokumentasi yang baik, dan sesuai dengan kebutuhan bisnisnya. Ini juga membantu dalam meningkatkan kualitas dan kinerja aplikasi seiring waktu
 
 ## 11. Bagaimana database / sistem basis data berperan dalam produk teknologi informasimu ?
 
-https://youtu.be/MEN2hpYgGLE
+Sistem basis data memainkan peran kunci dalam aplikasi coffeeshop "Nuku Coffee" dengan menyediakan cara terstruktur untuk menyimpan, mengelola, dan mengakses data. Berikut adalah beberapa peran utama sistem basis data dalam konteks aplikasi kafe tersebut:
+1.	Manajemen Pesanan:
+•	Penyimpanan Pesanan Pelanggan: Basis data menyimpan informasi pesanan pelanggan, termasuk daftar menu, jumlah item, dan preferensi khusus pelanggan. Ini memastikan konsistensi dan akurasi dalam pengelolaan pesanan.
+•	Pemantauan Status Pesanan: Basis data dapat digunakan untuk melacak status pesanan, seperti pesanan yang sedang diproses, dalam perjalanan, atau selesai. Ini membantu dalam memberikan informasi real-time kepada pelanggan dan staf kafe.
+2.	Manajemen Persediaan:
+•	Pencatatan Persediaan Bahan Baku: Sistem basis data dapat menyimpan informasi tentang persediaan bahan baku seperti kopi, susu, gula, dan lainnya. Hal ini membantu dalam mengelola stok, memperhitungkan pembelian, dan mencegah kekurangan persediaan.
+•	Pengingat Pembaruan Persediaan: Basis data dapat diatur untuk memberikan peringatan atau notifikasi otomatis ketika stok suatu item mencapai batas minimum, memungkinkan kafe untuk melakukan pembelian lebih lanjut.
+3.	Manajemen Pelanggan:
+•	Profil Pelanggan: Basis data menyimpan profil pelanggan, termasuk informasi kontak, preferensi rasa, riwayat pembelian, dan program loyalitas. Ini membantu kafe untuk memberikan pengalaman yang lebih personal kepada pelanggan.
+•	Analisis Data Pelanggan: Data pelanggan yang disimpan dalam basis data dapat dianalisis untuk mengidentifikasi tren pembelian, memahami preferensi pelanggan, dan merancang strategi pemasaran yang lebih efektif.
+4.	Keuangan dan Pembayaran:
+•	Catatan Transaksi: Sistem basis data mencatat setiap transaksi keuangan, termasuk pembayaran pelanggan dan pengeluaran kafe. Ini memfasilitasi pemantauan keuangan, perencanaan anggaran, dan pelaporan keuangan.
+•	Keamanan Data Keuangan: Basis data menyediakan lapisan keamanan untuk melindungi informasi keuangan, termasuk data pembayaran pelanggan dan informasi kartu kredit.
+Dengan bantuan sistem basis data yang baik, "Nuku Coffee" dapat mengelola operasionalnya dengan lebih efisien, meningkatkan layanan pelanggan, dan membuat keputusan yang lebih baik berdasarkan data yang terdokumentasi dengan baik..
+
 
 
